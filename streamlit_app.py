@@ -13,7 +13,7 @@ qr.save(buf)
 buf.seek(0)
 
 st.subheader("Scan the QR Code to View the Menu Online:")
-st.image(buf, caption=qr_link, use_column_width=False)
+st.image(buf, caption=qr_link, use_container_width=False)
 
 mains = [
     "Chicken Tikka",
