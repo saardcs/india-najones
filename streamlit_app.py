@@ -1,6 +1,19 @@
 import streamlit as st
+import qrcode
+from PIL import Image
+import io
 
 st.title("India Najones Lunchtime Special")
+
+# QR Code section
+qr_link = "https://your-app-url.com"  # Replace with actual link
+qr = qrcode.make(qr_link)
+buf = io.BytesIO()
+qr.save(buf)
+buf.seek(0)
+
+st.subheader("Scan the QR Code to View the Menu Online:")
+st.image(buf, caption=qr_link, use_column_width=False)
 
 mains = [
     "Chicken Tikka",
@@ -17,6 +30,9 @@ desserts = [
     "Pineapple Surprise",
     "Banana Split"
 ]
+
+all_combos = [(m, d) for m in mains for d in desserts]
+total_possible = len(all_combos)
 
 if "selected_combos" not in st.session_state:
     st.session_state.selected_combos = []
@@ -36,3 +52,7 @@ if st.session_state.selected_combos:
     st.header("Selected Combos:")
     for i, (m, d) in enumerate(st.session_state.selected_combos, 1):
         st.write(f"{i}. {m} + {d}")
+
+    if len(st.session_state.selected_combos) == total_possible:
+        st.balloons()
+        st.success("🎉 Congratulations! You found all 25 meal combos! 🎉")
