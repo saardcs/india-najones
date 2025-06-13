@@ -26,19 +26,16 @@ total_possible = len(all_combos)
 if "selected_combos" not in st.session_state:
     st.session_state.selected_combos = []
 
-# Sidebar for QR code and zoom slider
-st.sidebar.header("Menu QR Code")
+# Sidebar with QR code
+st.sidebar.header("Scan This QR Code to View Menu Online")
+
 qr_link = "https://your-app-url.com"  # Replace with your actual URL
-
-zoom = st.sidebar.slider("Zoom QR Code", min_value=100, max_value=400, value=200, step=50)
-
-# Generate QR code with given size
 qr = qrcode.make(qr_link)
 buf = io.BytesIO()
 qr.save(buf)
 buf.seek(0)
 
-st.sidebar.image(buf, caption=qr_link, width=zoom)
+st.sidebar.image(buf, width=200, caption=qr_link)
 
 # Main UI
 selected_main = st.selectbox("Choose a main course:", mains)
