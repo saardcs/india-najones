@@ -29,7 +29,7 @@ if "selected_combos" not in st.session_state:
 # Sidebar with QR code
 st.sidebar.header("Scan This QR Code to View Menu Online")
 
-qr_link = "https://your-app-url.com"  # Replace with your actual URL
+qr_link = "https://india-najones.streamlit.app"  # Replace with your actual URL
 qr = qrcode.make(qr_link)
 buf = io.BytesIO()
 qr.save(buf)
