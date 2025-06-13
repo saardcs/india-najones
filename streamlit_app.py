@@ -1,19 +1,8 @@
 import streamlit as st
 import qrcode
-from PIL import Image
 import io
 
 st.title("India Najones Lunchtime Special")
-
-# QR Code section
-qr_link = "https://your-app-url.com"  # Replace with actual link
-qr = qrcode.make(qr_link)
-buf = io.BytesIO()
-qr.save(buf)
-buf.seek(0)
-
-st.subheader("Scan the QR Code to View the Menu Online:")
-st.image(buf, caption=qr_link, use_container_width=False)
 
 mains = [
     "Chicken Tikka",
@@ -37,6 +26,21 @@ total_possible = len(all_combos)
 if "selected_combos" not in st.session_state:
     st.session_state.selected_combos = []
 
+# Sidebar for QR code and zoom slider
+st.sidebar.header("Menu QR Code")
+qr_link = "https://your-app-url.com"  # Replace with your actual URL
+
+zoom = st.sidebar.slider("Zoom QR Code", min_value=100, max_value=400, value=200, step=50)
+
+# Generate QR code with given size
+qr = qrcode.make(qr_link)
+buf = io.BytesIO()
+qr.save(buf)
+buf.seek(0)
+
+st.sidebar.image(buf, caption=qr_link, width=zoom)
+
+# Main UI
 selected_main = st.selectbox("Choose a main course:", mains)
 selected_dessert = st.selectbox("Choose a dessert:", desserts)
 
