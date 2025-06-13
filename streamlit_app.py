@@ -3,7 +3,7 @@ import qrcode
 import io
 
 st.title("India Najones Lunchtime Special")
-st.image("india-najones.png", width=400)
+st.image("india-najones.png", width=1200)
 mains = [
     "Chicken Tikka",
     "Lamb Vindaloo",
