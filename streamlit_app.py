@@ -35,7 +35,7 @@ buf = io.BytesIO()
 qr.save(buf)
 buf.seek(0)
 
-st.sidebar.image(buf, width=200, caption=qr_link)
+st.sidebar.image(buf, width=300, caption=qr_link)
 
 # Main UI
 selected_main = st.selectbox("Choose a main course:", mains)
