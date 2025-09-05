@@ -1,6 +1,6 @@
 # India Najones Lunchtime Special
 
-![](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)
+![](6d472136-a656-455b-99aa-17f6c80f3467.png)
 
 ### Purpose:
 This app helps students understand combinations in a fun and interactive way. By choosing one main course and one dessert, students explore how many unique meal combos can be created. The app tracks their selections and celebrates when all combinations are chosen.
