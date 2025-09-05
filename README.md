@@ -22,14 +22,26 @@ This app is based on a combinatorics activity from [Transum.org](https://www.tra
 
 ### How to run it on your own machine
 
-1. Install the requirements
+1. Make sure you have Python 3.9+ installed.
+2. Install the requirements
 
    ```
    $ pip install -r requirements.txt
    ```
 
-2. Run the app
+3. Place the image (thai-tanic.png) in the same directory.
+4. Run the app
 
    ```
    $ streamlit run streamlit_app.py
    ```
+
+---
+
+### Customization
+
+- **Modify Menu Options**: Edit the mains and desserts lists in the code to change the available items.
+
+- **Change URLs**: Update the QR code link (qr_link) to reflect the correct URL if the app is hosted elsewhere.
+
+- **Image**: Replace the image (thai-tanic.png) by updating the file path in the code.
