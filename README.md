@@ -40,6 +40,6 @@ This app is based on a combinatorics [activity](https://www.transum.org/Maths/Ex
 
 - **Modify Menu Options**: Edit the mains and desserts lists in the code to change the available items.
 
-- **Change URLs**: Update the QR code link (qr_link) to reflect the correct URL if the app is hosted elsewhere.
+- **Change QR Code**: Update the QR code link (qr_link) to reflect the correct URL if the app is hosted elsewhere.
 
-- **Image**: Replace the image (thai-tanic.png) by updating the file path in the code.
+- **Replace Image**: Update the image file path (india-najones.png) to change the image displayed in the app.
